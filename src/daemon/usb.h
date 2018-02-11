@@ -126,6 +126,12 @@
 #define P_GLAIVE_STR        "1b34"
 #define IS_GLAIVE(kb) ((kb)->vendor == V_CORSAIR && (kb)->product == P_GLAIVE)
 
+#define P_DARK_CORE        0x1b35 /* wired */
+#define P_DARK_CORE_STR    "1b35"
+#define P_DARK_CORE_WL     0x1b64 /* wireless */
+#define P_DARK_CORE_WL_STR "1b64"
+#define IS_DARK_CORE(kb) ((kb)->vendor == V_CORSAIR && ((kb)->product == P_DARK_CORE || (kb)->product == P_DARK_CORE_WL))
+
 #define P_POLARIS           0x1b3b
 #define P_POLARIS_STR       "1b3b"
 #define IS_POLARIS(kb) ((kb)->vendor == V_CORSAIR && ((kb)->product == P_POLARIS))
@@ -174,7 +180,7 @@ const char* product_str(short product);
 #define IS_FULLRANGE(kb)                (IS_RGB((kb)->vendor, (kb)->product) && (kb)->product != P_K65 && (kb)->product != P_K70 && (kb)->product != P_K95 && (kb)->product != P_STRAFE_NRGB)
 
 /// Mouse vs keyboard test
-#define IS_MOUSE(vendor, product)       ((vendor) == (V_CORSAIR) && ((product) == (P_M65) || (product) == (P_M65_PRO) || (product) == (P_SABRE_O) || (product) == (P_SABRE_L) || (product) == (P_SABRE_N) || (product) == (P_SCIMITAR) || (product) == (P_SCIMITAR_PRO) || (product) == (P_SABRE_O2) || (product) == (P_GLAIVE) || (product) == (P_HARPOON)))
+#define IS_MOUSE(vendor, product)       ((vendor) == (V_CORSAIR) && ((product) == (P_M65) || (product) == (P_M65_PRO) || (product) == (P_SABRE_O) || (product) == (P_SABRE_L) || (product) == (P_SABRE_N) || (product) == (P_SCIMITAR) || (product) == (P_SCIMITAR_PRO) || (product) == (P_SABRE_O2) || (product) == (P_GLAIVE) || (product) == (P_HARPOON) || (product) == (P_DARK_CORE) || (product) == (P_DARK_CORE_WL)))
 
 /// For calling with a usbdevice*, vendor and product are extracted and IS_MOUSE() is returned.
 #define IS_MOUSE_DEV(kb)                IS_MOUSE((kb)->vendor, (kb)->product)
