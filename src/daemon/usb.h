@@ -87,6 +87,7 @@
 #define P_K95_PLATINUM  0x1b2d
 #define P_K95_PLATINUM_STR "1b2d"
 #define IS_K95(kb)      ((kb)->vendor == V_CORSAIR && ((kb)->product == P_K95 || (kb)->product == P_K95_NRGB || (kb)->product == P_K95_PLATINUM))
+#define IS_K95_PLATINUM(kb) ((kb)->vendor == V_CORSAIR && (kb)->product == P_K95_PLATINUM)
 
 #define P_STRAFE            0x1b20
 #define P_STRAFE_STR        "1b20"
